@@ -3,9 +3,14 @@ window.onload = function()
 	{
 		var boundary=document.querySelectorAll('.boundary');
 		var end=document.querySelector('#end');
-		
+		var start=document.querySelector('#start');
+		start.onclick = function()
+		{
+			restart(boundary);
+		}
 		end.onmouseover = function()
-		{ gameover();
+		{ 
+			gameover();
 		}
 		for (var i = 0; i <boundary.length; i++) 
 			{
@@ -33,4 +38,12 @@ window.onload = function()
 			{
 				alert("You Win!");
 			}
+	}
+
+	function restart(element)
+	{
+		for (var x = 0; x < element.length; x++) 
+		{
+			element[x].setAttribute("class","boundary");
+		}
 	}
