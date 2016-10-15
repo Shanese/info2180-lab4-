@@ -1,4 +1,4 @@
-
+var message;
 window.onload = function()
 	{
 		var boundary=document.querySelectorAll('.boundary');
@@ -33,10 +33,10 @@ window.onload = function()
 		var youlose=document.querySelectorAll('.youlose');
 		if (youlose.length > 0) 
 			{
-				alert("You Lose!");
+				document.getElementById('status').textContent="You Lose";
 			} else 
 			{
-				alert("You Win!");
+				document.getElementById('status').textContent="You Win";
 			}
 	}
 
@@ -47,3 +47,4 @@ window.onload = function()
 			element[x].setAttribute("class","boundary");
 		}
 	}
+
