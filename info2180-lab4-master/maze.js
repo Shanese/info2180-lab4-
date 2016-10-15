@@ -1,17 +1,36 @@
+
 window.onload = function()
 	{
 		var boundary=document.querySelectorAll('.boundary');
+		var end=document.querySelector('#end');
+		
+		end.onmouseover = function()
+		{ gameover();
+		}
 		for (var i = 0; i <boundary.length; i++) 
 			{
 				boundary[i].onmouseover = function()
-
 				{
-					for (var x = 0; x < boundary.length; x++) {
-						boundary[x].setAttribute("class","boundary youlose");
-					}
-				}
+					changeColour(boundary);
+				}	
  			} 
 	}
 
+	function changeColour(element)
+	{
+		for (var x = 0; x < element.length; x++) {
+			element[x].setAttribute("class","boundary youlose");
+		}
+	}
 
-
+	function gameover()
+	{ 
+		var youlose=document.querySelectorAll('.youlose');
+		if (youlose.length > 0) 
+			{
+				alert("You Lose!");
+			} else 
+			{
+				alert("You Win!");
+			}
+	}
